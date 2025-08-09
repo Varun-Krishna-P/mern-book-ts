@@ -34,3 +34,10 @@ curl -X POST http://localhost:5000/api/books \
     "publicationDate": "1994-10-31",
     "publisher": "Addison-Wesley"
   }'
+
+
+curl -w "\n" -X PUT http://localhost:5000/api/books/6839dfc07dd78ac2355f298f \
+  -H "Content-Type: application/json" \
+  -d '{
+    "publicationDate": "2022-12-15"
+  }'
