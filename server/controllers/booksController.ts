@@ -2,6 +2,27 @@ import type { Request, Response } from 'express'
 
 import Book from '../models/book.ts';
 
+export const getAllBooks = async (req: Request, res: Response): Promise<void> => {
+    try{
+        const books = await Book.find({}).lean()
+        res.status(200).json(books);
+    }catch(err) {
+        res.status(500).json({message: 'Error listing books', error: err})
+    }
+}
+
+export const getBook = async (req: Request, res: Response): Promise<void> => {
+    try{
+        const book = await Book.findOne({_id: req.params.id })
+        if(!book){
+            res.status(404).json({message: "Error fetching book", error: "book not found"})
+        }else{
+            res.status(200).json(book)
+        }
+    }catch(error) {
+        res.status(500).json({message: "Error fetching book", error: error});
+    }
+}
 
 export const createBook = async (req: Request, res: Response): Promise<void> => {
     try {
