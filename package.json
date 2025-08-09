@@ -23,9 +23,14 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server/app.js",
+    "server:dev": "nodemon server/app.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client\""
   },
-  "dependencies": {
-    "concurrently": "^9.2.0"
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10"
   }
 }
