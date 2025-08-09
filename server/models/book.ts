@@ -19,6 +19,8 @@ const BookSchema: Schema = new Schema({
     publicationDate: { type: String},
     publisher: {type: String}
 
+},{
+    timestamps: true
 })
 
 

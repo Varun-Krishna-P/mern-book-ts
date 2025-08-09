@@ -1,0 +1,36 @@
+curl -X POST http://localhost:5000/api/books \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A Handbook of Agile Software Craftsmanship",
+    "edition": "1st",
+    "instock": true,
+    "publicationDate": "2008-08-01",
+    "publisher": "Prentice Hall"
+  }'
+
+curl -X POST http://localhost:5000/api/books \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt and David Thomas",
+    "description": "Your Journey to Mastery, 20th Anniversary Edition",
+    "edition": "2nd",
+    "instock": false,
+    "publicationDate": "2019-09-13",
+    "publisher": "Addison-Wesley"
+  }'
+
+
+curl -X POST http://localhost:5000/api/books \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+    "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+    "description": "A foundational book on software design patterns",
+    "edition": "1st",
+    "instock": true,
+    "publicationDate": "1994-10-31",
+    "publisher": "Addison-Wesley"
+  }'
